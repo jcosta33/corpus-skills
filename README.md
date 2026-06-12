@@ -1,10 +1,10 @@
 # swarm-skills
 
-> The optional skills catalog for [Swarm](https://github.com/jcosta33/swarm) — focused agent guides in the open Agent Skills format, installable into any agent CLI.
+> The optional skills catalog for [Swarm](https://github.com/jcosta33/swarm) — conditioning stances and code-authoring depth in the open Agent Skills format, installable into any agent CLI.
 
 Each skill is a self-contained folder under [`skills/`](./skills/): one `SKILL.md` with a trigger description and the working rules, plus bundled `references/` where a skill ships a fillable session frame. No scripts, no runtime — markdown an agent loads when the work matches.
 
-The Swarm starter kit ships the three guides the core loop requires (`write-spec`, `implement-task`, `review-output`). Everything else lives here, so a workspace installs only what its work calls for.
+The [Swarm starter kit](https://github.com/jcosta33/swarm-starter-kit) ships the guides the workflow itself requires — the core loop (`write-spec`, `implement-task`, `review-output`) and the workspace authoring guides (`write-audit`, `write-research`, `write-rfc`, `write-prd`, `write-bug-report`, `write-change-plan`, `write-inventory`, `spec-check`, `split-work`, `save-findings`, `adversarial-review`). Everything here is the optional layer on top: install only what your work calls for.
 
 ## Install
 
@@ -15,47 +15,34 @@ With the [Vercel skills CLI](https://github.com/vercel-labs/skills) (works with 
 npx skills add jcosta33/swarm-skills --list
 
 # install one skill into the current repo
-npx skills add jcosta33/swarm-skills --skill write-audit
+npx skills add jcosta33/swarm-skills --skill persona-skeptic
 
 # install globally, or for a specific agent
-npx skills add jcosta33/swarm-skills --skill write-audit -g
-npx skills add jcosta33/swarm-skills --skill write-audit -a claude-code
+npx skills add jcosta33/swarm-skills --skill persona-skeptic -g
+npx skills add jcosta33/swarm-skills --skill persona-skeptic -a claude-code
 ```
 
-No CLI? Copy the folder: `cp -R skills/write-audit <your-repo>/.agents/skills/` (point your tool's skills directory at the same folder — e.g. a `.claude/skills` symlink).
+No CLI? Copy the folder: `cp -R skills/persona-skeptic <your-repo>/.agents/skills/` (point your tool's skills directory at the same folder — e.g. a `.claude/skills` symlink).
 
 ## The AGENTS.md contract
 
-Skills name abstract command slots — `cmdTest`, `cmdLint`, `cmdTypecheck` — never concrete commands. The consuming repo's `AGENTS.md` Commands table supplies the implementations. That split is what makes a skill portable: the guide carries the discipline, your repo carries the toolchain. An empty slot means **ask** — a skill never invents a command. The [Swarm starter kit](https://github.com/jcosta33/swarm) sets this contract up for you.
+Skills name abstract command slots — `cmdTest`, `cmdLint`, `cmdTypecheck`, `cmdValidate` — never concrete commands. The consuming repo's `AGENTS.md` Commands table supplies the implementations. That split is what makes a skill portable: the guide carries the discipline, your repo carries the toolchain. An empty slot means **ask** — a skill never invents a command. The [Swarm starter kit](https://github.com/jcosta33/swarm-starter-kit) sets this contract up for you.
 
 ## Catalog
 
-### Quality gates
+### Conditioning (stances)
+
+Cognitive postures loaded *alongside* a work guide — they tilt what the agent looks for and refuses, while the guide carries the procedure.
 
 | Skill | Use it when |
 |---|---|
-| `adversarial-review` | a deep, hostile re-review of an agent branch — re-run validation yourself, six adversarial questions, caller search |
-| `spec-check` | proofreading a spec against the writing rules before work is cut from it |
-| `save-findings` | closing a task — route every durable discovery to a home that outlives the session |
-
-### Planning and decomposition
-
-| Skill | Use it when |
-|---|---|
-| `split-work` | one spec needs to become several right-sized, independently verifiable tasks |
-| `write-change-plan` | a structural change to an existing area needs ordered, reviewable steps |
-| `write-inventory` | structural work needs a catalog of what exists before anyone plans the change |
-
-### Document authoring
-
-| Skill | Use it when |
-|---|---|
-| `write-audit` | an existing area needs an evidence-grounded picture of its risk and debt |
-| `write-research` | a decision needs surveyed options and evidence before anyone commits |
-| `write-rfc` | one approach should be proposed and weighed against alternatives before deciding |
-| `write-prd` | new product behavior needs its outcome and audience stated before a spec exists |
-| `write-bug-report` | a defect needs a reproduction and a root cause before anyone writes the fix task |
+| `persona-architect` | shaping a spec or design — requirements free of smuggled implementation, each one verifiable |
+| `persona-auditor` | recording present state — observation not prescription, file:line per finding, severity by blast radius |
+| `persona-documentarian` | writing human-facing docs — one frame throughout, every example run as written |
+| `persona-researcher` | depth inquiry against primary sources, committing to no decision |
+| `persona-skeptic` | judging another agent's completion claims — refute by default, re-run the checks yourself |
 | `persona-surveyor` | breadth research — what prevails across many products, patterns, or users |
+| `empirical-proof` | any completion claim — bind it to verbatim pasted output, or it reads unverified |
 
 ### Code authoring
 
@@ -72,10 +59,14 @@ Skills name abstract command slots — `cmdTest`, `cmdLint`, `cmdTypecheck` — 
 | `write-documentation` | human-facing docs for a reader who hasn't read the code |
 | `fix-flaky-test` | a test that fails intermittently — diagnose, don't retry-loop |
 
+## The science
+
+[`docs/`](./docs/) documents the empirical evidence behind every structural choice in these skills — why descriptions are directive ([activation](./docs/activation.md)), why bodies stay under 200 lines ([body anatomy](./docs/body-anatomy.md)), why verification steps force visible output ([execution](./docs/execution.md)), why skills don't depend on each other ([self-containment](./docs/self-containment.md)), when a skill ships a task template ([task files](./docs/task-files.md)), and what deliberately stays out ([scope](./docs/scope.md)) — with the full bibliography in [sources](./docs/sources.md).
+
 ## Security
 
 Read a skill before installing it — a skill is instructions your agent will follow. Everything here is plain markdown: no scripts, no network calls, no executables. Pin to a commit if you need a stable install.
 
 ## Relationship to the Swarm framework
 
-These guides assume the Swarm working discipline — specs with verifiable requirements, task packets with evidence-backed claims, review packets as the durable record — but each one stands alone; install what fits your workflow. The framework, its docs, and the starter kit live at [jcosta33/swarm](https://github.com/jcosta33/swarm). This catalog is curated: skill content is edited here, and changes are planned and reviewed in the Swarm project's workspace.
+These skills assume nothing about Swarm — each stands alone in any repo with an `AGENTS.md`. They pair naturally with the Swarm working discipline (specs with verifiable requirements, task packets with evidence-backed claims, review packets as the durable record); the framework and its docs live at [jcosta33/swarm](https://github.com/jcosta33/swarm), the copy-whole workspace at [jcosta33/swarm-starter-kit](https://github.com/jcosta33/swarm-starter-kit). This catalog is curated: skill content is edited here, and changes are planned and reviewed in the Swarm project's workspace.
