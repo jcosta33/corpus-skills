@@ -42,8 +42,8 @@ fix in prose.
    conversation has not finished its job.)_
 3. **What observable behavior would demonstrate this requirement?** Every requirement needs a
    `Verify with:` line naming the behavior a check can exercise. _(A requirement no one can
-   verify is a wish — the no-verify check in the Swarm repo's `docs/reference/checks.md`; checklist today, a
-   future `swarm spec check` should flag it.)_
+   verify is a wish — the no-verify check in the Swarm repo's `docs/reference/checks.md`; `swarm check`
+   (swarm-cli, shipped) flags it, or review catches it by checklist.)_
 4. **What existing pattern, module, or contract already covers this — and did I survey for it,
    or recall it from memory?** Memory is not a survey. _(Recall misses the helper added last
    week and reinvents what exists.)_
