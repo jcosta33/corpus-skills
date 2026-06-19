@@ -63,6 +63,24 @@
 <a id="41"></a>
 **[41] Self-Preference Bias in LLM-as-a-Judge.** Wataoka, Takahashi, Ri, NeurIPS 2024. An LLM scoring outputs favours its own generations; GPT-4 shows the highest self-preference of the eight models measured. With [\[40\]](#40), the reason a challenge carries weight only from a voice separate from the proposer. <https://arxiv.org/abs/2410.21819>
 
+<a id="42"></a>
+**[42] GRADE handbook.** GRADE Working Group, gradepro.org. Defines the four certainty levels (high / moderate / low / very low), anchors the starting grade to study design (randomized trials start high, observational starts low), and fixes the five downgrade domains (risk of bias, inconsistency, indirectness, imprecision, publication bias, each ↓1–2 levels) and three upgrade criteria (large effect, dose-response, confounding working against the effect). The transferable evidence-grading kernel for the academic research mode. <https://gdt.gradepro.org/app/handbook/handbook.html>
+
+<a id="43"></a>
+**[43] GRADE: an emerging consensus on rating quality of evidence and strength of recommendations.** Guyatt, Oxman, Vist, et al., _BMJ_ 336:924, 2008. The foundational GRADE paper; states verbatim that RCT-based evidence "begins as high quality" and observational "start[s] with a low quality rating," with the five downgrade and three upgrade factors. <https://pmc.ncbi.nlm.nih.gov/articles/PMC2335261/>
+
+<a id="44"></a>
+**[44] OCEBM Levels of Evidence (2011).** OCEBM Levels of Evidence Working Group (Howick, Chalmers, Glasziou, Greenhalgh, Heneghan, et al.), Oxford Centre for Evidence-Based Medicine. A five-level study-design hierarchy per question type (Level 1 systematic review → Level 5 mechanism-based reasoning); "the likely strongest evidence is furthest to the left, each column to the right likely weaker." A level may be graded down (quality, imprecision, indirectness, inconsistency, very small effect) or up (large effect), and "a systematic review is generally better than an individual study." <https://www.cebm.ox.ac.uk/resources/levels-of-evidence/ocebm-levels-of-evidence>
+
+<a id="45"></a>
+**[45] The PRISMA 2020 statement: an updated guideline for reporting systematic reviews.** Page, McKenzie, Bossuyt, et al., _BMJ_ 372:n71, 2021. A 27-item reporting checklist; item 7 requires the full, reproducible search strategy "copied and pasted exactly as run"; new items 15 and 22 require reporting the method and result of a certainty assessment (GRADE) per outcome; complete reporting "allows readers to assess … the trustworthiness of the findings." <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8005924/>
+
+<a id="46"></a>
+**[46] scite: A smart citation index that displays the context of citations and classifies their intent.** Nicholson, Mordaunt, Lopez, et al., _Quantitative Science Studies_ 2(3):882–898, 2021 (MIT Press). A SciBERT model classifies each citation as supporting, contrasting/disputing, or mentioning — because "a citation that disputes a paper is treated the same as a citation that supports it" by raw counts. Citation volume cannot tell corroboration from contestation; read the context. (An independent evaluation found the automated labels imperfect — treat intent labels as hints to verify.) <https://direct.mit.edu/qss/article/2/3/882/102990/scite-A-smart-citation-index-that-displays-the>
+
+<a id="47"></a>
+**[47] Evaluating the accuracy of GPT-4o-generated citations in mental-health literature reviews.** _JMIR Mental Health_ 12:e80371, 2025. In a controlled experiment GPT-4o fabricated **19.9 %** of citations, and **45.4 %** of the real (non-fabricated) ones contained bibliographic errors; fabrication rose with topic obscurity (6 % for a high-visibility topic vs ~28–29 % for specialized ones, P=.001). The measured baseline that mandates quote-and-DOI verification, scaled to topic obscurity. <https://mental.jmir.org/2025/1/e80371>
+
 ---
 
 ## Specifications and official guidance

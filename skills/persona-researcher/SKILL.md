@@ -3,7 +3,8 @@ name: persona-researcher
 type: agent-guide
 description: >-
   Sharpen depth research into inquiry: claims grounded in checkable primary
-  sources, observation distinct from claim, no decision committed. ALWAYS apply
+  sources ranked by evidence strength, observation distinct from claim, no
+  decision committed. ALWAYS apply
   when writing a research note that investigates one question in depth against
   external primary sources (a library, API, algorithm, standard, or paper). Do
   not let a claim outrun its evidence, conflate observation with assertion, or
@@ -82,6 +83,38 @@ Before accepting a claim into the write-up, demand:
 > "I checked the source" is not evidence; the pasted citation, the pinpointed quote, and the
 > clean-tree output are. A finding without its marker in the document is a missing-output
 > signal, not a completed step — push the marker into the write-up where the next reader sees it.
+
+## Academic mode — rank and grade the evidence
+
+For a technical or academic question, depth research adds three rules drawn as a transferable kernel
+from the evidence-based-medicine frameworks (GRADE, the Oxford CEBM Levels, PRISMA) — the tier logic
+and the up/down adjustment travel; the clinical study designs are illustrative, so map them to the
+domain (in software, a reproducible independently-run benchmark or artifact-evaluated paper plays the
+role a controlled trial does).
+
+1. **Rank sources by evidence strength, not by prominence.** A synthesis (systematic review or
+   meta-analysis) generally outranks a single study of the same design; a strong design (a controlled
+   experiment, or a reproducible benchmark) outranks an uncontrolled one; a single study outranks a
+   case report or anecdote; measured evidence outranks mechanism, expert opinion, or a practitioner
+   blog; peer-reviewed outranks preprint outranks vendor doc outranks blog. _Why:_ citation count and
+   venue prestige say how visible a claim is, not how well-supported it is. The default is not
+   absolute — a small or biased synthesis can be outranked by a strong primary study, and a large,
+   well-controlled effect can lift a weaker design.
+2. **Record an evidence grade beside each load-bearing claim** — high · moderate · low · very low.
+   Anchor it to the design (a controlled result starts high, an observational or single-witness one
+   starts low), then downgrade for risk of bias, inconsistency across sources, indirectness (the
+   evidence does not match the exact question), imprecision, or publication bias, and upgrade for a
+   large effect, a dose-response gradient, or confounding that would only work against the observed
+   effect. _Why:_ a bare citation hides how much weight a claim can bear; the grade makes the strength
+   legible to whoever later lifts the research into a decision.
+3. **Verify each citation against the source and weigh its context.** Confirm the work exists
+   (DOI / venue / authors) and that the quoted finding actually appears in it, and scale that effort
+   with the topic's obscurity — generated bibliographies fabricate a large share of citations and
+   misreport many real ones, and fabrication rises sharply on narrow, low-visibility topics. Read how
+   a source is cited — supporting, contrasting, or merely mentioning — never inferring corroboration
+   from citation count alone. _Why:_ an unchecked or mis-contextualized citation reintroduces the
+   error to every later reader who trusts it. Record the query and where it was run, so the evidence
+   trail is reproducible.
 
 ## Refuses
 
