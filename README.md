@@ -43,7 +43,8 @@ already ships the core loop. Add skills only as a specific need shows up, in rou
    `write-refactor` for behavior-pinned restructuring, `write-migration` for an A→B move. Install
    the one the task calls for, not the set.
 5. **A `persona-*` stance** when the *kind of thinking* matters more than the procedure —
-   `persona-architect` while shaping a spec, `persona-auditor` while mapping a brownfield codebase.
+   `persona-architect` while shaping a spec, `persona-auditor` while mapping a brownfield codebase,
+   `persona-challenger` while pressure-testing a proposal before it's built.
 
 Rule of thumb: install the fewest skills that name the discipline your current task is missing.
 
@@ -57,6 +58,7 @@ Cognitive postures loaded *alongside* a work guide — they tilt what the agent 
 |---|---|
 | `persona-architect` | shaping a spec or design — requirements free of smuggled implementation, each one verifiable |
 | `persona-auditor` | recording present state — observation not prescription, file:line per finding, severity by blast radius |
+| `persona-challenger` | pressure-testing a live proposal before it's built — surface assumptions, steelman the alternative, ground the challenge in external evidence |
 | `persona-documentarian` | writing human-facing docs — one frame throughout, every example run as written |
 | `persona-researcher` | depth inquiry against primary sources, committing to no decision |
 | `persona-skeptic` | judging another agent's completion claims — refute by default, re-run the checks yourself |
