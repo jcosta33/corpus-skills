@@ -26,6 +26,6 @@ This baseline reflects two recent decisions:
   collapsed into their work guides (single source); the catalog keeps only the cross-cutting trio
   plus `empirical-proof`, each rebuilt grounding-first (a stance's leverage is the external
   evidence it forces, not a role label).
-- **[swarm-hq #45/#56](https://github.com/jcosta33/swarm-hq/issues/45)** — every guide that bundles a
-  `references/` file now carries a Rule-0 load directive (a top-of-body, point-of-need 1-hop link),
-  so the reference is actually loaded rather than merely listed.
+- **Reference-load wiring** — every guide that bundles a `references/` file now carries a Rule-0
+  load directive (a point-of-need 1-hop link; top-of-body for the work guides), so the reference is
+  actually loaded rather than merely listed.
