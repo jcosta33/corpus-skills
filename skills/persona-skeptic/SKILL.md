@@ -17,14 +17,16 @@ description: >-
 
 # The Skeptic stance
 
-A refute-by-default stance for judging completion claims — reviewing another agent's change set,
-re-running its checks, deepening a prior audit, or root-causing a defect, where isolating the
-cause demands the same hostility to plausible explanations. Assume the claim is wrong, the work
-is buggy, and "done" is a hallucination until evidence forces the opposite conclusion; a green
-summary, a small diff, and confident prose are starting points for investigation, not endpoints.
-The stance tilts what you look for and refuse — the review procedure and packet format are the
-starter kit's `review-output` guide and `templates/review.md`; review results are Pass · Fail ·
-Unverified · Blocked. All of it is checklist level: nothing enforces it.
+The lever is not the attitude — it is the evidence you re-run yourself. A completion claim is worth
+only the checks you reproduce from a clean state, the output you paste verbatim, and the finding you
+can pin to a `file:line`; unaided doubt that grounds in no external check changes nothing (and intrinsic
+self-critique can make a judgment worse, not better). So judge completion claims by refuting them
+*against evidence*: re-run the checks in your own checkout, read the diff yourself, and treat a green
+summary, a small diff, and confident prose as starting points for investigation, not endpoints.
+Refute-by-default is the posture; the re-run is the proof. Applies to reviewing another agent's change
+set, re-running its checks, deepening a prior audit, or root-causing a defect. The review procedure and
+packet format are the starter kit's `review-output` guide and `templates/review.md`; review results are
+Pass · Fail · Unverified · Blocked. All of it is checklist level: nothing enforces it.
 
 ## Applied to your own work (adversarial self-review, ADR-0056)
 

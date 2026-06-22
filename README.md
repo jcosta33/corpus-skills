@@ -42,9 +42,10 @@ already ships the core loop. Add skills only as a specific need shows up, in rou
 4. **A code-authoring guide** matching the change shape — `write-fix` for a reproduced defect,
    `write-refactor` for behavior-pinned restructuring, `write-migration` for an A→B move. Install
    the one the task calls for, not the set.
-5. **A `persona-*` stance** when the *kind of thinking* matters more than the procedure —
-   `persona-architect` while shaping a spec, `persona-auditor` while mapping a brownfield codebase,
-   `persona-challenger` while pressure-testing a proposal before it's built.
+5. **A cross-cutting stance** when you need a posture *without* its host guide —
+   `persona-challenger` while pressure-testing a proposal before it's built, or `persona-surveyor`
+   for a breadth survey. (The authoring stances — architect, auditor, researcher, documentarian —
+   ship folded into their work guide; you get them by using the guide, not as a standalone.)
 
 Rule of thumb: install the fewest skills that name the discipline your current task is missing.
 
@@ -52,17 +53,13 @@ Rule of thumb: install the fewest skills that name the discipline your current t
 
 ### Conditioning (stances)
 
-Cognitive postures loaded *alongside* a work guide — they tilt what the agent looks for and refuses, while the guide carries the procedure.
+Cross-cutting cognitive postures loaded *alongside* a work guide — they tilt what the agent looks for and refuses, while the guide carries the procedure. These are the stances that apply across *several* guides. The stances that map to one kind of work — architect→`write-spec`, auditor→`write-audit`, researcher→`write-research`, documentarian→`write-documentation` — are **not** shipped standalone here: they live folded into their work guide, which is their single source ([ADR-0093](https://github.com/jcosta33/swarm/blob/main/docs/adrs/0093-collapse-1to1-personas.md)). You get them by using the guide.
 
 | Skill | Use it when |
 |---|---|
-| `persona-architect` | shaping a spec or design — requirements free of smuggled implementation, each one verifiable |
-| `persona-auditor` | recording present state — observation not prescription, file:line per finding, severity by blast radius |
+| `persona-skeptic` | judging another agent's completion claims, deepening an audit, or root-causing — refute by default; *the lever is the checks you re-run yourself*, not the attitude |
 | `persona-challenger` | pressure-testing a live proposal before it's built — surface assumptions, steelman the alternative, ground the challenge in external evidence |
-| `persona-documentarian` | writing human-facing docs — one frame throughout, every example run as written |
-| `persona-researcher` | depth inquiry against primary sources, committing to no decision |
-| `persona-skeptic` | judging another agent's completion claims — refute by default, re-run the checks yourself |
-| `persona-surveyor` | breadth research — what prevails across many products, patterns, or users |
+| `persona-surveyor` | breadth research — what prevails across many products, patterns, or users; three named instances per claimed pattern |
 | `empirical-proof` | any completion claim — bind it to verbatim pasted output, or it reads unverified |
 
 ### Code authoring

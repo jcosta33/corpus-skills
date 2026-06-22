@@ -53,28 +53,28 @@ never inside a `SKILL.md` body.
 
 ---
 
-## Personas: the canonical worked example
+## Cross-cutting stances: the canonical worked example
 
-The persona discipline is where the self-containment principle does its loudest work. Every persona is a fully standalone skill — installing the starter kit's `write-audit` guide does not pull in `persona-auditor`, and installing the persona does not require the guide.
+The cross-cutting stances are where the self-containment principle does its loudest work. Each is a fully standalone skill — installing the starter kit's `review-output` guide does not pull in `persona-skeptic`, and installing the persona does not require the guide. (The stances that map 1:1 to one kind of work — architect, auditor, researcher, documentarian — are not shipped standalone at all; they live folded into their kit work guide, their single source, per [ADR-0093](https://github.com/jcosta33/swarm/blob/main/docs/adrs/0093-collapse-1to1-personas.md). Self-containment is exactly why that fold is clean: the guide already carries the whole discipline, with nothing to import.)
 
 ```mermaid
 flowchart TD
-    UR[User: "audit the auth module"] --> AGT[Agent assesses task]
-    AGT -->|matches description| WA["write-audit loads (starter kit)"]
-    AGT -->|matches description| PA[persona-auditor loads]
-    WA -.no link to.-> PA
-    PA -.no link to.-> WA
-    WA & PA --> CTX[(Both in context, neither depends on the other)]
+    UR[User: "review this finished task"] --> AGT[Agent assesses task]
+    AGT -->|matches description| RO["review-output loads (starter kit)"]
+    AGT -->|matches description| PS[persona-skeptic loads]
+    RO -.no link to.-> PS
+    PS -.no link to.-> RO
+    RO & PS --> CTX[(Both in context, neither depends on the other)]
 ```
 
 | Property | How it's enforced |
 | --- | --- |
-| **Each persona is a separate skill folder** | `skills/persona-auditor/SKILL.md`, `skills/persona-skeptic/SKILL.md`, … one folder per persona, each ~115–135 lines. |
-| **Each persona activates from task assessment, not from cross-skill mention** | Each `description` names the task type the persona is for, e.g. *"ALWAYS apply this skill when authoring an audit of present state"*. The agent loads the persona because the task matches, not because another skill mentioned it. |
-| **No persona index / core / loader skill** | There is no `personas-core`, no `personas` monolith. Each persona is independently installable. |
-| **Personas are not referenced from any other skill** | `Grep` over `skills/` for `persona-` returns zero hits inside non-persona `SKILL.md` files and zero hits inside any `references/task-template.md`. The only matches are within the persona files themselves, where "personas" appears as a concept word ("do not blend personas"). |
+| **Each stance is a separate skill folder** | `skills/persona-skeptic/SKILL.md`, `skills/persona-challenger/SKILL.md`, `skills/persona-surveyor/SKILL.md` — one folder per cross-cutting stance, each self-contained. |
+| **Each stance activates from task assessment, not from cross-skill mention** | Each `description` names the task type the stance is for, e.g. *"ALWAYS apply when judging another agent's change set"*. The agent loads it because the task matches, not because another skill mentioned it. |
+| **No stance index / core / loader skill** | There is no `personas-core`, no `personas` monolith. Each is independently installable. |
+| **Stances are not referenced from any other skill** | `Grep` over `skills/` for `persona-` returns zero hits inside non-stance `SKILL.md` files and zero hits inside any `references/task-template.md`. The only matches are within the stance files themselves. |
 
-> A consumer who installs only the kit's `write-audit` and this catalog's `persona-auditor` gets the same behaviour as one with everything installed — neither file mentions the other.
+> A consumer who installs only the kit's `review-output` and this catalog's `persona-skeptic` gets the same behaviour as one with everything installed — neither file mentions the other.
 
 ---
 

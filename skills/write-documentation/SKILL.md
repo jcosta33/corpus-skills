@@ -16,10 +16,10 @@ description: >-
 Documentation that hedges, ships examples that do not run, or contradicts the code is worse than no
 documentation — it misleads, and the reader cannot tell. This guide adds the documentation
 discipline on top of the base `implement-task` rules, carrying the Documentarian stance: the reader
-is a human who has not read the code, arrived with one question, and the doc answers it. The stance
-on its own is `../persona-documentarian/SKILL.md` (if installed); this guide is its execution for a
-documentation task, so the load-bearing rules are restated here and the skill stands alone without
-it. These are conventions the review packet inspects — nothing enforces them at edit time.
+is a human who has not read the code, arrived with one question, and the doc answers it. This guide
+*is* the documentarian discipline's single home — its load-bearing rules are carried here in full, so
+the skill stands alone (the standalone documentarian stance was retired into the work guides per
+ADR-0093). These are conventions the review packet inspects — nothing enforces them at edit time.
 
 This guide is for docs humans read. Agent-facing material (guides, templates, workflow docs) is a
 different audience with different conventions, and code-changing work belongs to the other guides
