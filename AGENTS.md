@@ -1,10 +1,10 @@
-# AGENTS.md — swarm-skills
+# AGENTS.md — corpus-skills
 
 This repo is the optional-skills catalog for the Corpus framework: self-contained
 agent guides in the Agent Skills format, one folder per skill under `skills/`,
 with the evidence behind their design under `docs/`. It is a derived-content
 repo — it carries no Corpus workspace install; the work of changing it is
-planned and reviewed in the family workspace (the sibling `swarm-hq` repo).
+planned and reviewed in the family workspace (the sibling `corpus-hq` repo).
 
 ## Editing rules
 
@@ -24,7 +24,7 @@ The rationale and evidence for each rule live in `docs/` (the rule names its pag
   step that only asks the agent to "verify" gets silently skipped.
 - **Self-containment** (`docs/self-containment.md`): a skill must read
   correctly with no other file from this repo installed. Restate a load-bearing
-  sibling rule inline; point at a sibling that *carries* a discipline only as
+  sibling rule inline; point at a sibling that _carries_ a discipline only as
   `../<name>/SKILL.md` with an explicit "if installed" marker. A plain mention
   that merely sends a different task elsewhere (`load fix-flaky-test, not this`)
   carries no dependency and needs no marker — the test is whether the skill
@@ -42,6 +42,6 @@ The rationale and evidence for each rule live in `docs/` (the rule names its pag
 
 ## Commands
 
-| Slot | Command | Resolves |
-|---|---|---|
-| — | (none) | markdown-only repo; content is checked by review |
+| Slot | Command | Resolves                                         |
+| ---- | ------- | ------------------------------------------------ |
+| —    | (none)  | markdown-only repo; content is checked by review |

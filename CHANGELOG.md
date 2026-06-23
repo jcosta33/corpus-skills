@@ -6,9 +6,9 @@ All notable changes to the Corpus skills catalog are recorded here. The format f
 renames a skill or breaks a skill's contract, **minor** adds a skill or non-breaking guidance,
 **patch** is a fix or wording change.
 
-The catalog is pull-updatable — you install it with `npx skills add jcosta33/swarm-skills` (pin to
+The catalog is pull-updatable — you install it with `npx skills add jcosta33/corpus-skills` (pin to
 a tag or commit for stability) and re-run to re-fetch. Watch the
-[releases](https://github.com/jcosta33/swarm-skills/releases) and re-pull when a bump matters.
+[releases](https://github.com/jcosta33/corpus-skills/releases) and re-pull when a bump matters.
 
 ## [Unreleased]
 
@@ -22,7 +22,7 @@ and `implement-task`.
 
 This baseline reflects two recent decisions:
 
-- **[Corpus ADR-0093](https://github.com/jcosta33/swarm/blob/main/docs/adrs/0093-collapse-1to1-personas.md)** — the four 1:1 authoring personas (architect / auditor / researcher / documentarian) were
+- **[Corpus ADR-0093](https://github.com/jcosta33/corpus/blob/main/docs/adrs/0093-collapse-1to1-personas.md)** — the four 1:1 authoring personas (architect / auditor / researcher / documentarian) were
   collapsed into their work guides (single source); the catalog keeps only the cross-cutting trio
   plus `empirical-proof`, each rebuilt grounding-first (a stance's leverage is the external
   evidence it forces, not a role label).

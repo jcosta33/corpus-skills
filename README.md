@@ -1,10 +1,10 @@
-# swarm-skills
+# corpus-skills
 
-> The optional skills catalog for [Corpus](https://github.com/jcosta33/swarm) — conditioning stances and code-authoring depth in the open Agent Skills format, installable into any agent CLI.
+> The optional skills catalog for [Corpus](https://github.com/jcosta33/corpus) — conditioning stances and code-authoring depth in the open Agent Skills format, installable into any agent CLI.
 
 Each skill is a self-contained folder under [`skills/`](./skills/): one `SKILL.md` with a trigger description and the working rules, plus bundled `references/` where a skill ships a fillable session frame. No scripts, no runtime — markdown an agent loads when the work matches.
 
-The [Corpus starter kit](https://github.com/jcosta33/swarm-starter-kit) ships the guides the workflow itself requires — the core loop (`write-spec`, `implement-task`, `review-output`) and the workspace authoring guides (`write-audit`, `write-research`, `write-rfc`, `write-prd`, `write-bug-report`, `write-change-plan`, `write-inventory`, `spec-check`, `split-work`, `save-findings`, `adversarial-review`). Everything here is the optional layer on top: install only what your work calls for.
+The [Corpus starter kit](https://github.com/jcosta33/corpus-starter-kit) ships the guides the workflow itself requires — the core loop (`write-spec`, `implement-task`, `review-output`) and the workspace authoring guides (`write-audit`, `write-research`, `write-rfc`, `write-prd`, `write-bug-report`, `write-change-plan`, `write-inventory`, `spec-check`, `split-work`, `save-findings`, `adversarial-review`). Everything here is the optional layer on top: install only what your work calls for.
 
 ## Install
 
@@ -12,41 +12,41 @@ With the [Vercel skills CLI](https://github.com/vercel-labs/skills) (works with 
 
 ```bash
 # list what's available
-npx skills add jcosta33/swarm-skills --list
+npx skills add jcosta33/corpus-skills --list
 
 # install one skill into the current repo
-npx skills add jcosta33/swarm-skills --skill persona-skeptic
+npx skills add jcosta33/corpus-skills --skill persona-skeptic
 
 # install globally, or for a specific agent
-npx skills add jcosta33/swarm-skills --skill persona-skeptic -g
-npx skills add jcosta33/swarm-skills --skill persona-skeptic -a claude-code
+npx skills add jcosta33/corpus-skills --skill persona-skeptic -g
+npx skills add jcosta33/corpus-skills --skill persona-skeptic -a claude-code
 ```
 
 No CLI? Copy the folder: `cp -R skills/persona-skeptic <your-repo>/.agents/skills/` (point your tool's skills directory at the same folder — e.g. a `.claude/skills` symlink).
 
 Pin to a tag or commit for stability and re-run to re-fetch. The catalog is
 [semver](https://semver.org)-versioned ([`VERSION`](./VERSION), [`CHANGELOG.md`](./CHANGELOG.md));
-watch the [releases](https://github.com/jcosta33/swarm-skills/releases) and re-pull when a bump matters.
+watch the [releases](https://github.com/jcosta33/corpus-skills/releases) and re-pull when a bump matters.
 
 ## The AGENTS.md contract
 
-Skills name abstract command slots — `cmdTest`, `cmdLint`, `cmdTypecheck`, `cmdValidate` — never concrete commands. The consuming repo's `AGENTS.md` Commands table supplies the implementations. That split is what makes a skill portable: the guide carries the discipline, your repo carries the toolchain. An empty slot means **ask** — a skill never invents a command. The [Corpus starter kit](https://github.com/jcosta33/swarm-starter-kit) sets this contract up for you.
+Skills name abstract command slots — `cmdTest`, `cmdLint`, `cmdTypecheck`, `cmdValidate` — never concrete commands. The consuming repo's `AGENTS.md` Commands table supplies the implementations. That split is what makes a skill portable: the guide carries the discipline, your repo carries the toolchain. An empty slot means **ask** — a skill never invents a command. The [Corpus starter kit](https://github.com/jcosta33/corpus-starter-kit) sets this contract up for you.
 
 ## Where to start
 
-You don't need any of these to run Corpus — the [starter kit](https://github.com/jcosta33/swarm-starter-kit)
+You don't need any of these to run Corpus — the [starter kit](https://github.com/jcosta33/corpus-starter-kit)
 already ships the core loop. Add skills only as a specific need shows up, in roughly this order:
 
 1. **Nothing.** Run the loop with the kit's core guides. Most changes never need more.
-2. **`persona-skeptic`** — the first one most teams want. Load it when an agent *judges another
-   agent's* completion claims, so the review refutes by default and re-runs the checks rather than
+2. **`persona-skeptic`** — the first one most teams want. Load it when an agent _judges another
+   agent's_ completion claims, so the review refutes by default and re-runs the checks rather than
    trusting them.
 3. **`empirical-proof`** — pair it with any completion claim to force verbatim pasted output; the
    fastest cure for "done" that was never actually checked.
 4. **A code-authoring guide** matching the change shape — `write-fix` for a reproduced defect,
    `write-refactor` for behavior-pinned restructuring, `write-migration` for an A→B move. Install
    the one the task calls for, not the set.
-5. **A cross-cutting stance** when you need a posture *without* its host guide —
+5. **A cross-cutting stance** when you need a posture _without_ its host guide —
    `persona-challenger` while pressure-testing a proposal before it's built, or `persona-surveyor`
    for a breadth survey. (The authoring stances — architect, auditor, researcher, documentarian —
    ship folded into their work guide; you get them by using the guide, not as a standalone.)
@@ -57,29 +57,29 @@ Rule of thumb: install the fewest skills that name the discipline your current t
 
 ### Conditioning (stances)
 
-Cross-cutting cognitive postures loaded *alongside* a work guide — they tilt what the agent looks for and refuses, while the guide carries the procedure. These are the stances that apply across *several* guides. The stances that map to one kind of work — architect→`write-spec`, auditor→`write-audit`, researcher→`write-research`, documentarian→`write-documentation` — are **not** shipped standalone here: they live folded into their work guide, which is their single source ([ADR-0093](https://github.com/jcosta33/swarm/blob/main/docs/adrs/0093-collapse-1to1-personas.md)). You get them by using the guide.
+Cross-cutting cognitive postures loaded _alongside_ a work guide — they tilt what the agent looks for and refuses, while the guide carries the procedure. These are the stances that apply across _several_ guides. The stances that map to one kind of work — architect→`write-spec`, auditor→`write-audit`, researcher→`write-research`, documentarian→`write-documentation` — are **not** shipped standalone here: they live folded into their work guide, which is their single source ([ADR-0093](https://github.com/jcosta33/corpus/blob/main/docs/adrs/0093-collapse-1to1-personas.md)). You get them by using the guide.
 
-| Skill | Use it when |
-|---|---|
-| `persona-skeptic` | judging another agent's completion claims, deepening an audit, or root-causing — refute by default; *the lever is the checks you re-run yourself*, not the attitude |
-| `persona-challenger` | pressure-testing a live proposal before it's built — surface assumptions, steelman the alternative, ground the challenge in external evidence |
-| `persona-surveyor` | breadth research — what prevails across many products, patterns, or users; three named instances per claimed pattern |
-| `empirical-proof` | any completion claim — bind it to verbatim pasted output, or it reads unverified |
+| Skill                | Use it when                                                                                                                                                         |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `persona-skeptic`    | judging another agent's completion claims, deepening an audit, or root-causing — refute by default; _the lever is the checks you re-run yourself_, not the attitude |
+| `persona-challenger` | pressure-testing a live proposal before it's built — surface assumptions, steelman the alternative, ground the challenge in external evidence                       |
+| `persona-surveyor`   | breadth research — what prevails across many products, patterns, or users; three named instances per claimed pattern                                                |
+| `empirical-proof`    | any completion claim — bind it to verbatim pasted output, or it reads unverified                                                                                    |
 
 ### Code authoring
 
-| Skill | Use it when |
-|---|---|
-| `implement-task` | implementing a Corpus task packet, long form — supersedes the kit's core guide when you want the full session frame |
-| `write-feature` | net-new behavior behind a defined surface |
-| `write-fix` | a reproduced defect with a root cause |
-| `write-refactor` | restructuring with behavior pinned by tests |
-| `write-rewrite` | re-implementing code whose behavior changes on purpose, with the delta recorded and the rest proven preserved |
-| `write-migration` | moving the code from API A to API B — green after every wave, old callsites grepped to zero |
-| `write-performance` | a measured bottleneck with a target, baseline first |
-| `write-testing` | adding the tests an area should already have |
-| `write-documentation` | human-facing docs for a reader who hasn't read the code |
-| `fix-flaky-test` | a test that fails intermittently — diagnose, don't retry-loop |
+| Skill                 | Use it when                                                                                                         |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `implement-task`      | implementing a Corpus task packet, long form — supersedes the kit's core guide when you want the full session frame |
+| `write-feature`       | net-new behavior behind a defined surface                                                                           |
+| `write-fix`           | a reproduced defect with a root cause                                                                               |
+| `write-refactor`      | restructuring with behavior pinned by tests                                                                         |
+| `write-rewrite`       | re-implementing code whose behavior changes on purpose, with the delta recorded and the rest proven preserved       |
+| `write-migration`     | moving the code from API A to API B — green after every wave, old callsites grepped to zero                         |
+| `write-performance`   | a measured bottleneck with a target, baseline first                                                                 |
+| `write-testing`       | adding the tests an area should already have                                                                        |
+| `write-documentation` | human-facing docs for a reader who hasn't read the code                                                             |
+| `fix-flaky-test`      | a test that fails intermittently — diagnose, don't retry-loop                                                       |
 
 ## The science
 
@@ -91,4 +91,4 @@ Read a skill before installing it — a skill is instructions your agent will fo
 
 ## Relationship to the Corpus framework
 
-These skills assume nothing about Corpus — each stands alone in any repo with an `AGENTS.md`. They pair naturally with the Corpus working discipline (specs with verifiable requirements, task packets with evidence-backed claims, review packets as the durable record); the framework and its docs live at [jcosta33/swarm](https://github.com/jcosta33/swarm), the copy-whole workspace at [jcosta33/swarm-starter-kit](https://github.com/jcosta33/swarm-starter-kit). This catalog is curated: skill content is edited here, and changes are planned and reviewed in the Corpus project's workspace.
+These skills assume nothing about Corpus — each stands alone in any repo with an `AGENTS.md`. They pair naturally with the Corpus working discipline (specs with verifiable requirements, task packets with evidence-backed claims, review packets as the durable record); the framework and its docs live at [jcosta33/corpus](https://github.com/jcosta33/corpus), the copy-whole workspace at [jcosta33/corpus-starter-kit](https://github.com/jcosta33/corpus-starter-kit). This catalog is curated: skill content is edited here, and changes are planned and reviewed in the Corpus project's workspace.

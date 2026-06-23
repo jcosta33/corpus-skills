@@ -1,6 +1,6 @@
 # Sources
 
-> **Every claim in this directory cites at least one entry below. A claim without a citation is opinion, not finding** — cribbed from the Corpus starter kit's [`write-research`](https://github.com/jcosta33/swarm-starter-kit/blob/main/.agents/skills/write-research/SKILL.md) guide. Where a primary source was unavailable, the most authoritative secondary source is cited and labelled.
+> **Every claim in this directory cites at least one entry below. A claim without a citation is opinion, not finding** — cribbed from the Corpus starter kit's [`write-research`](https://github.com/jcosta33/corpus-starter-kit/blob/main/.agents/skills/write-research/SKILL.md) guide. Where a primary source was unavailable, the most authoritative secondary source is cited and labelled.
 
 ---
 
@@ -46,10 +46,10 @@
 **[33] On the Impact of AGENTS.md Files on the Efficiency of AI Coding Agents.** Lulla, Mohsenimofidi, Galster, Zhang, Baltes, Treude, Jan 2026. Paired same-task / same-repository study over 124 pull requests across 10 repositories. Presence of `AGENTS.md` is associated with **lower median wall-clock runtime (≈28.6 %)** and **reduced output token consumption (≈16.6 %)** while task-completion behaviour stays comparable. Companion to [\[32\]](#32) — efficiency gains without performance regression. <https://arxiv.org/abs/2601.20404>
 
 <a id="36"></a>
-**[36] Curse of Instructions: Large Language Models Cannot Follow Multiple Instructions at Once.** Harada et al., ICLR 2025. ManyIFEval (up to ten verifiable instructions) across GPT-4o, Claude-3.5-Sonnet, Gemini-1.5, Gemma2, and Llama3.1: the probability of satisfying *all* instructions is closely predicted by the per-instruction success rate raised to the instruction count — joint compliance collapses multiplicatively. At ten simultaneous instructions GPT-4o satisfies all of them only **~15 %** of the time (31 % with instruction-level chain-of-thought); Claude-3.5-Sonnet **~44 %** (58 %). The peer-reviewed grounding for lean bodies and few, well-separated rules. <https://openreview.net/forum?id=R6q67CDBCH>
+**[36] Curse of Instructions: Large Language Models Cannot Follow Multiple Instructions at Once.** Harada et al., ICLR 2025. ManyIFEval (up to ten verifiable instructions) across GPT-4o, Claude-3.5-Sonnet, Gemini-1.5, Gemma2, and Llama3.1: the probability of satisfying _all_ instructions is closely predicted by the per-instruction success rate raised to the instruction count — joint compliance collapses multiplicatively. At ten simultaneous instructions GPT-4o satisfies all of them only **~15 %** of the time (31 % with instruction-level chain-of-thought); Claude-3.5-Sonnet **~44 %** (58 %). The peer-reviewed grounding for lean bodies and few, well-separated rules. <https://openreview.net/forum?id=R6q67CDBCH>
 
 <a id="37"></a>
-**[37] Large Language Models Cannot Self-Correct Reasoning Yet.** Huang, Chen, Mishra, et al. (Google DeepMind), ICLR 2024. Without external feedback, intrinsic self-correction degrades reasoning accuracy — GPT-4 on GSM8K falls **95.5 % → 91.5 % → 89.0 %** across rounds, driven by *answer-flipping* (a model changes correct answers to incorrect more often than the reverse, because it cannot judge its own reasoning); prior reported gains depended on oracle labels. The basis for grounding [`persona-challenger`](../skills/persona-challenger/SKILL.md) externally rather than in unaided second-guessing. <https://arxiv.org/abs/2310.01798>
+**[37] Large Language Models Cannot Self-Correct Reasoning Yet.** Huang, Chen, Mishra, et al. (Google DeepMind), ICLR 2024. Without external feedback, intrinsic self-correction degrades reasoning accuracy — GPT-4 on GSM8K falls **95.5 % → 91.5 % → 89.0 %** across rounds, driven by _answer-flipping_ (a model changes correct answers to incorrect more often than the reverse, because it cannot judge its own reasoning); prior reported gains depended on oracle labels. The basis for grounding [`persona-challenger`](../skills/persona-challenger/SKILL.md) externally rather than in unaided second-guessing. <https://arxiv.org/abs/2310.01798>
 
 <a id="38"></a>
 **[38] CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing.** Gou, Shao, Gong, et al., ICLR 2024. Self-correction works when the critique is grounded in external tools (interpreter, search); ablations show the gains vanish or go negative once the external feedback is removed. Pairs with [\[37\]](#37) and [\[27\]](#27) to draw the help/hurt boundary for adversarial critique. <https://arxiv.org/abs/2305.11738>
@@ -101,7 +101,7 @@
 **[17] Extend Claude with skills.** Claude Code docs. Skill loading model in Claude Code specifically. <https://docs.anthropic.com/en/docs/claude-code/skills>
 
 <a id="19"></a>
-**[19] agents.md.** The open `AGENTS.md` convention adopted by Cursor, Codex, Claude Code, OpenCode, and others; basis for the [Corpus starter kit's](https://github.com/jcosta33/swarm-starter-kit/blob/main/AGENTS.md) `AGENTS.md` contract. <https://agents.md>
+**[19] agents.md.** The open `AGENTS.md` convention adopted by Cursor, Codex, Claude Code, OpenCode, and others; basis for the [Corpus starter kit's](https://github.com/jcosta33/corpus-starter-kit/blob/main/AGENTS.md) `AGENTS.md` contract. <https://agents.md>
 
 <a id="20"></a>
 **[20] Effective context engineering for AI agents.** Anthropic Engineering, Sep 29 2025. Official Anthropic guidance on context as a finite resource. Defines the **canonical three-file note-taking pattern**: `task_plan.md` for the plan, `progress_log.md` for the running session log, `decisions.md` for durable design choices. The discipline behind this repo's task-template sections. <https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents>
