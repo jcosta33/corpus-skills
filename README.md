@@ -4,7 +4,7 @@
 
 Each skill is a self-contained folder under [`skills/`](./skills/): one `SKILL.md` with a trigger description and the working rules, plus bundled `references/` where a skill ships a fillable session frame. No scripts, no runtime — markdown an agent loads when the work matches.
 
-The [Corpus starter kit](https://github.com/jcosta33/corpus-starter-kit) ships the guides the workflow itself requires — the core loop (`write-spec`, `implement-task`, `review-output`) and the workspace authoring guides (`write-audit`, `write-research`, `write-rfc`, `write-prd`, `write-bug-report`, `write-change-plan`, `write-inventory`, `spec-check`, `split-work`, `save-findings`, `adversarial-review`). Everything here is the optional layer on top: install only what your work calls for.
+The [Corpus starter kit](https://github.com/jcosta33/corpus-starter-kit) ships the guides the workflow itself requires — the core loop (`write-spec`, `implement-task`, `review-output`) and the workspace authoring guides (`write-audit`, `write-research`, `write-rfc`, `write-prd`, `write-bug-report`, `write-change-plan`, `write-inventory`, `spec-check`, `split-work`, `save-findings`). Everything here is the optional layer on top — review *style* and code depth, stances, output economy — install only what your work calls for.
 
 ## Install
 
@@ -66,6 +66,7 @@ Cross-cutting cognitive postures loaded _alongside_ a work guide — they tilt w
 | `persona-surveyor`   | breadth research — what prevails across many products, patterns, or users; three named instances per claimed pattern                                                |
 | `empirical-proof`    | any completion claim — bind it to verbatim pasted output, or it reads unverified                                                                                    |
 | `concise-output`     | you want terse, scannable, token-economical output — evidence-first, structure over prose, no filler; the strong dial above Corpus's output-economy convention (clarity still outranks brevity) |
+| `adversarial-review` | reviewing a branch / audit / bug — refute by default, run the validators yourself, the three-lens model; the review *style* (Corpus mandates the review artifact, not the style — ADR-0111) |
 
 ### Code authoring
 
