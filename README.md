@@ -4,7 +4,7 @@
 
 Each skill is a self-contained folder under [`skills/`](./skills/): one `SKILL.md` with a trigger description and the working rules, plus bundled `references/` where a skill ships a fillable session frame. No scripts, no runtime — markdown an agent loads when the work matches.
 
-The [Corpus starter kit](https://github.com/jcosta33/corpus-starter-kit) ships the guides the workflow itself requires — the core loop (`write-spec`, `implement-task`, `review-output`) and the workspace authoring guides (`write-audit`, `write-research`, `write-rfc`, `write-prd`, `write-bug-report`, `write-change-plan`, `write-inventory`, `spec-check`, `split-work`, `save-findings`). Everything here is the optional layer on top — review *style* and code depth, stances, output economy — install only what your work calls for.
+The [Corpus starter kit](https://github.com/jcosta33/corpus-starter-kit) ships every Corpus-coupled skill — the core loop (`write-spec`, `implement-task`, `review-output`), the workspace authoring guides (`write-audit`, `write-research`, `write-rfc`, `write-prd`, `write-bug-report`, `write-change-plan`, `write-inventory`, `spec-check`, `split-work`, `save-findings`), and the task-implementation depth (`write-feature`, `write-fix`, `write-refactor`, `write-rewrite`, `write-migration`, `write-performance`, `write-testing`, `write-documentation`). Everything **here** is the universal layer — stances, disciplines, review style, output economy — framework-free and installable in any repo; install only what your work calls for ([ADR-0112](https://github.com/jcosta33/corpus/blob/main/docs/adrs/0112-two-tier-skills.md)).
 
 ## Install
 
@@ -55,33 +55,30 @@ Rule of thumb: install the fewest skills that name the discipline your current t
 
 ## Catalog
 
-### Conditioning (stances)
+Everything here is **universal** — framework-free, installable into any repo with zero Corpus knowledge.
+Corpus-coupled skills (the artifact builders + the `write-*` task-implementation depth) live in the
+[starter kit](https://github.com/jcosta33/corpus-starter-kit) instead, not here ([ADR-0112](https://github.com/jcosta33/corpus/blob/main/docs/adrs/0112-two-tier-skills.md)).
 
-Cross-cutting cognitive postures loaded _alongside_ a work guide — they tilt what the agent looks for and refuses, while the guide carries the procedure. These are the stances that apply across _several_ guides. The stances that map to one kind of work — architect→`write-spec`, auditor→`write-audit`, researcher→`write-research`, documentarian→`write-documentation` — are **not** shipped standalone here: they live folded into their work guide, which is their single source ([ADR-0093](https://github.com/jcosta33/corpus/blob/main/docs/adrs/0093-collapse-1to1-personas.md)). You get them by using the guide.
+### Stances
+
+Cross-cutting cognitive postures loaded _alongside_ the work — they tilt what the agent looks for and refuses. The 1:1 authoring stances (architect/auditor/researcher/documentarian) are **not** here: they live folded into their work guide in the kit, their single source ([ADR-0093](https://github.com/jcosta33/corpus/blob/main/docs/adrs/0093-collapse-1to1-personas.md)).
 
 | Skill                | Use it when                                                                                                                                                         |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `persona-skeptic`    | judging another agent's completion claims, deepening an audit, or root-causing — refute by default; _the lever is the checks you re-run yourself_, not the attitude |
 | `persona-challenger` | pressure-testing a live proposal before it's built — surface assumptions, steelman the alternative, ground the challenge in external evidence                       |
 | `persona-surveyor`   | breadth research — what prevails across many products, patterns, or users; three named instances per claimed pattern                                                |
+
+### Disciplines
+
+Framework-free practices that raise the floor on any task, in any repo.
+
+| Skill                | Use it when                                                                                                                                                         |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `adversarial-review` | reviewing a branch / PR / diff / audit / bug — refute by default, run the checks yourself, the three-lens panel; you produce findings, not the merge decision       |
 | `empirical-proof`    | any completion claim — bind it to verbatim pasted output, or it reads unverified                                                                                    |
-| `concise-output`     | you want terse, scannable, token-economical output — evidence-first, structure over prose, no filler; the strong dial above Corpus's output-economy convention (clarity still outranks brevity) |
-| `adversarial-review` | reviewing a branch / audit / bug — refute by default, run the validators yourself, the three-lens model; the review *style* (Corpus mandates the review artifact, not the style — ADR-0111) |
-
-### Code authoring
-
-| Skill                 | Use it when                                                                                                         |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `implement-task`      | implementing a Corpus task packet, long form — supersedes the kit's core guide when you want the full session frame |
-| `write-feature`       | net-new behavior behind a defined surface                                                                           |
-| `write-fix`           | a reproduced defect with a root cause                                                                               |
-| `write-refactor`      | restructuring with behavior pinned by tests                                                                         |
-| `write-rewrite`       | re-implementing code whose behavior changes on purpose, with the delta recorded and the rest proven preserved       |
-| `write-migration`     | moving the code from API A to API B — green after every wave, old callsites grepped to zero                         |
-| `write-performance`   | a measured bottleneck with a target, baseline first                                                                 |
-| `write-testing`       | adding the tests an area should already have                                                                        |
-| `write-documentation` | human-facing docs for a reader who hasn't read the code                                                             |
-| `fix-flaky-test`      | a test that fails intermittently — diagnose, don't retry-loop                                                       |
+| `concise-output`     | you want terse, scannable, token-economical output — evidence-first, structure over prose, no filler (clarity still outranks brevity)                               |
+| `fix-flaky-test`     | a test that fails intermittently — reproduce by looping, fix the cause not the assertion, don't retry-loop                                                          |
 
 ## The science
 

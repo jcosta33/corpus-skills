@@ -48,7 +48,7 @@ Common evasions — and the response — are listed in [`skills/empirical-proof/
 
 ### Test verification — `write-testing`
 
-The "flip the assertion" pattern. [`write-testing`](../skills/write-testing/SKILL.md) rule 4 ("Flip every test to prove it means something") makes it a per-test loop: after writing each test, flip its assertion (or comment out the production code path it exercises); run the test — it must fail; restore — it must pass; paste a representative sample of the failing-then-passing transition into the self-review.
+The "flip the assertion" pattern. The kit's `write-testing` rule 4 ("Flip every test to prove it means something") makes it a per-test loop: after writing each test, flip its assertion (or comment out the production code path it exercises); run the test — it must fail; restore — it must pass; paste a representative sample of the failing-then-passing transition into the self-review.
 
 Without the flip, _"the test passes"_ is unfalsifiable from pasted output alone — the test could be tautological, or fail for a different reason, or simply never run. Flipping the assertion exposes whether the test is actually exercising the intended code path. Forced visible output applied to test authorship.
 
