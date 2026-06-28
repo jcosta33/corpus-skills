@@ -169,11 +169,10 @@ prose raises trust without raising scrutiny. Pairs with the
 
 ## You don't own the ship decision
 
-You produce **findings + evidence + a human-attention list** — not an approve/merge/reject verdict. Why:
-the person who can be accountable for shipping owns that call; a reviewer who self-issues "approved"
-removes the human judgment the review existed to inform. A human or an independent reviewer owns the
-ship/merge call. And **never review your own work** for a verdict — an author scoring their own change
-cannot be trusted to disagree with it (this is the boundary the self-review subsection above respects).
+You produce **findings + evidence + a human-attention list** — not an approve/merge/reject verdict. The
+person accountable for shipping owns that call; a reviewer who self-issues "approved" removes the human
+judgment the review existed to inform. (The same rule turned on your own work is the self-review boundary
+above.)
 
 ## Gotchas
 
@@ -181,8 +180,6 @@ cannot be trusted to disagree with it (this is the boundary the self-review subs
   branch with their uncommitted state — it "passes" for the wrong reason. Re-run from a clean checkout.
 - **Pasted output mistaken for proof.** Accepting the author's paste instead of re-running — their paste
   is the claim under review, not its proof, and it only proves the command ran _at some past moment_.
-- **"I can't reproduce" treated as case closed.** The discrepancy is itself a finding to chase down, not
-  a reason to dismiss the concern.
 - **Early reveal on a panel.** The three lenses share a thread before drafting, and all three anchor on
   the first reviewer's framing — you get one opinion in triplicate, not three (the correlated-opinion
   trap). Keep stage one private.
