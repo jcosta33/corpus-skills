@@ -8,12 +8,12 @@ Most repos define themselves by what they contain. This one is also defined by w
 
 ## What this repo is
 
-`suspec-skills` ships **universal agent-workflow skills** — the 11 skills that hold for any repo regardless of the Suspec workflow ([ADR-0112](https://github.com/jcosta33/suspec/blob/main/docs/adrs/0112-two-tier-skills.md)). Each skill is a self-contained discipline that an agent loads when the task matches its description. The Suspec-coupled guides — the artifact builders (specs, audits, research, RFCs, change plans) and the `write-*` task-implementation depth (including `implement-task`) — ship installed in the [starter kit](https://github.com/jcosta33/suspec-starter-kit), not here.
+`suspec-skills` ships **universal agent-workflow skills** that hold for any repo regardless of the Suspec workflow. Each skill is a self-contained discipline that an agent loads when the task matches its description. The Suspec-coupled guides — the artifact builders (specs, audits, research, RFCs, change plans) and the `write-*` task-implementation depth (including `implement-task`) — ship installed in the [starter kit](https://github.com/jcosta33/suspec-starter-kit), not here.
 
 | Domain                     | Shape of skills shipped                                                                                                                                                |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Conditioning (stances)** | Cross-cutting cognitive postures loaded alongside the work — `persona-challenger`, `persona-surveyor` — plus the standalone evidence discipline (`empirical-proof`).    |
-| **Disciplines**            | Framework-free practices that raise the floor on any task — `adversarial-review` (which absorbed the retired `persona-skeptic` stance), `concise-output`, `fix-flaky-test`. |
+| **Market/review methods**  | Cross-cutting methods loaded alongside the work — `market-research`, `persona-challenger` — plus the standalone evidence discipline (`empirical-proof`). |
+| **Disciplines**            | Framework-free practices that raise the floor on any task — `adversarial-review`, `concise-output`, `fix-flaky-test`.                           |
 | **Code-lifecycle**         | The fundamental coding skills — `codebase-exploration`, `debugging`, `security-review`, `git-pr`, `planning-spec`.                                                      |
 
 Every skill answers the question _"how should an agent shape its work for tasks of this type?"_ — not _"what should an engineer know about this domain?"_.
@@ -81,10 +81,10 @@ If validation tooling proves load-bearing, it lives in **its own repo** consumed
 ### 🚫 No "core" / "loader" / "index" skill that other skills depend on
 
 ```text
-Out of scope: personas-core, write-core, validation-core, any "loader" skill that other skills depend on
+Out of scope: methods-core, write-core, validation-core, any "loader" skill that other skills depend on
 ```
 
-**Why.** This is a direct application of [Self-containment](./self-containment.md). The progressive-disclosure model [\[1\]](./sources.md#1)[\[2\]](./sources.md#2) says each skill loads on its own metadata; introducing a "core" skill that other skills assume is loaded breaks that model. The persona discipline demonstrates the alternative — a folder per persona, each independently installable, no shared core, no cross-references.
+**Why.** This is a direct application of [Self-containment](./self-containment.md). The progressive-disclosure model [\[1\]](./sources.md#1)[\[2\]](./sources.md#2) says each skill loads on its own metadata; introducing a "core" skill that other skills assume is loaded breaks that model. The catalog demonstrates the alternative — a folder per method, each independently installable, no shared core, no cross-references.
 
 ### 🚫 No skills designed to "always load"
 

@@ -1,6 +1,6 @@
 # Self-containment
 
-> **Why no `SKILL.md` references another skill, why project-specific values resolve through `AGENTS.md`, and why the personas live in individual folders rather than one shared index.**
+> **Why no `SKILL.md` references another skill, why project-specific values resolve through `AGENTS.md`, and why each optional stance lives in its own folder rather than one shared index.**
 
 Skills install individually. A user who installs `write-feature` does not have `empirical-proof` in their context unless they also install it. The repo's structure has to assume that — every shipped skill stands alone, with no implicit dependencies on its siblings.
 
@@ -55,7 +55,7 @@ never inside a `SKILL.md` body.
 
 ## Cross-cutting stances: the canonical worked example
 
-The cross-cutting stances are where the self-containment principle does its loudest work. Each is a fully standalone skill — installing the starter kit's `review-output` guide does not pull in `adversarial-review`, and installing that skill does not require the guide. (The stances that map 1:1 to one kind of work — architect, auditor, researcher, documentarian — are not shipped standalone at all; they live folded into their kit work guide, their single source, per [ADR-0093](https://github.com/jcosta33/suspec/blob/main/docs/adrs/0093-collapse-1to1-personas.md). Self-containment is exactly why that fold is clean: the guide already carries the whole discipline, with nothing to import.)
+The cross-cutting stances are where the self-containment principle does its loudest work. Each is a fully standalone skill — installing the starter kit's `review-output` guide does not pull in `adversarial-review`, and installing that skill does not require the guide.
 
 ```mermaid
 flowchart TD
@@ -69,10 +69,10 @@ flowchart TD
 
 | Property                                                                     | How it's enforced                                                                                                                                                                                             |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Each stance is a separate skill folder**                                   | `skills/persona-challenger/SKILL.md`, `skills/persona-surveyor/SKILL.md` — one folder per cross-cutting stance, each self-contained (the former `persona-skeptic` folded into the `adversarial-review` discipline).  |
-| **Each stance activates from task assessment, not from cross-skill mention** | Each `description` names the task type the stance is for, e.g. _"ALWAYS apply when weighing a proposal before it's built"_. The agent loads it because the task matches, not because another skill mentioned it. |
-| **No stance index / core / loader skill**                                    | There is no `personas-core`, no `personas` monolith. Each is independently installable.                                                                                                                       |
-| **Stances are not referenced from any other skill**                          | `Grep` over `skills/` for `persona-` returns no cross-skill dependency: the only non-stance hits are in `adversarial-review/SKILL.md`, documenting that it absorbed the retired `persona-skeptic` stance — not loading it. Every other match is within a stance file itself.    |
+| **Each cross-cutting method is a separate skill folder**                     | `skills/persona-challenger/SKILL.md`, `skills/market-research/SKILL.md` — one folder per method, each self-contained.                                                                                         |
+| **Each method activates from task assessment, not from cross-skill mention** | Each `description` names the task type the method is for, e.g. _"ALWAYS apply when weighing a proposal before it's built"_. The agent loads it because the task matches, not because another skill mentioned it. |
+| **No method index / core / loader skill**                                    | There is no `methods-core`, no monolithic index skill. Each is independently installable.                                                                                                                       |
+| **Methods are not referenced from any other skill**                          | A method skill is loaded because its own description matches the task, not because another skill names it.                                                                                                      |
 
 > A consumer who installs only the kit's `review-output` and this catalog's `adversarial-review` gets the same behaviour as one with everything installed — neither file mentions the other.
 
@@ -166,6 +166,6 @@ For self-containment specifically, the implication is structural: **state is sha
 
 - [Activation](./activation.md) — exclusion clauses name the _task types_ a skill is not for, never sibling skill names. The agent disambiguates by matching the user's task to whichever sibling's `ALWAYS apply when…` clause triggers.
 - [Body anatomy](./body-anatomy.md) — body length budgets factor in inline restatement.
-- [Scope](./scope.md) — the same self-containment principle is what excludes any "personas-core" or "loader" index skill from the repo.
+- [Scope](./scope.md) — the same self-containment principle is what excludes any "methods-core" or "loader" index skill from the repo.
 - [Task files](./task-files.md) — the file-based state externalisation that lets self-contained skills coordinate.
 - [Sources](./sources.md) — full bibliography.

@@ -1,10 +1,10 @@
 # suspec-skills
 
-> The optional skills catalog for [Suspec](https://github.com/jcosta33/suspec) — conditioning stances, code-lifecycle disciplines, and review/output style in the open Agent Skills format, installable into any agent CLI.
+> The optional skills catalog for [Suspec](https://github.com/jcosta33/suspec) — market/review methods, code-lifecycle disciplines, and output style in the open Agent Skills format, installable into any agent CLI.
 
 Each skill is a self-contained folder under [`skills/`](./skills/): one `SKILL.md` with a trigger description and the working rules, plus bundled `references/` where a skill ships a fillable session frame. No scripts, no runtime — markdown an agent loads when the work matches.
 
-The [Suspec starter kit](https://github.com/jcosta33/suspec-starter-kit) ships every Suspec-coupled skill — the core loop (`write-spec`, `implement-task`, `review-output`), the workspace authoring guides (`write-audit`, `write-research`, `write-rfc`, `write-prd`, `write-bug-report`, `write-change-plan`, `write-inventory`, `spec-check`, `split-work`, `save-findings`), and the task-implementation depth (`write-feature`, `write-fix`, `write-refactor`, `write-rewrite`, `write-migration`, `write-performance`, `write-testing`, `write-documentation`). Everything **here** is the universal layer — stances, disciplines, review style, output economy — framework-free and installable in any repo; install only what your work calls for.
+The [Suspec starter kit](https://github.com/jcosta33/suspec-starter-kit) ships every Suspec-coupled skill — the core loop (`write-spec`, `implement-task`, `review-output`), the workspace authoring guides (`write-audit`, `write-research`, `write-rfc`, `write-prd`, `write-bug-report`, `write-change-plan`, `write-inventory`, `spec-check`, `split-work`, `save-findings`), and the task-implementation depth (`write-feature`, `write-fix`, `write-refactor`, `write-rewrite`, `write-migration`, `write-performance`, `write-testing`, `write-documentation`). Everything **here** is the universal layer — market/review methods, disciplines, output economy — framework-free and installable in any repo; install only what your work calls for.
 
 ## Install
 
@@ -40,17 +40,15 @@ already ships the core loop. Add skills only as a specific need shows up, in rou
 1. **Nothing.** Run the loop with the kit's core guides. Most changes never need more.
 2. **`adversarial-review`** — the first one most teams want. Load it when an agent _judges another
    agent's_ change (branch / PR / diff / audit / bug): it refutes by default, re-runs the checks
-   itself, and produces findings — not a merge sign-off. (It absorbs the old `persona-skeptic`
-   stance; that name now redirects here.)
+   itself, and produces findings — not a merge sign-off.
 3. **`empirical-proof`** — pair it with any completion claim to force verbatim pasted output; the
    fastest cure for "done" that was never actually checked.
 4. **A code-lifecycle skill** matching the work — `debugging` for a live defect, `security-review`
    for a risk-bearing change, `codebase-exploration` for an unfamiliar repo, `planning-spec` before
    you build, `git-pr` to ship. Install the one the task calls for, not the set.
-5. **A cross-cutting stance** when you need a posture _without_ its host guide —
-   `persona-challenger` while pressure-testing a proposal before it's built, or `persona-surveyor`
-   for a breadth survey. (The authoring stances — architect, auditor, researcher, documentarian —
-   ship folded into their work guide; you get them by using the guide, not as a standalone.)
+5. **A cross-cutting method** when you need a focused discipline _without_ its host guide —
+   `persona-challenger` while pressure-testing a proposal before it's built, or `market-research`
+   for market, customer, competitor, or UX-pattern evidence synthesis.
 
 Rule of thumb: install the fewest skills that name the discipline your current task is missing.
 
@@ -60,16 +58,14 @@ Everything here is **universal** — framework-free, installable into any repo w
 Suspec-coupled skills (the artifact builders + the `write-*` task-implementation depth) live in the
 [starter kit](https://github.com/jcosta33/suspec-starter-kit) instead, not here.
 
-### Stances
+### Market and review methods
 
-Cross-cutting cognitive postures loaded _alongside_ the work — they tilt what the agent looks for and refuses. The 1:1 authoring stances (architect/auditor/researcher/documentarian) are **not** here: they live folded into their work guide in the kit, their single source.
+Cross-cutting methods loaded _alongside_ the work — they change what the agent must prove, verify, and refuse.
 
 | Skill                | Use it when                                                                                                                                                         |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `persona-challenger` | pressure-testing a live proposal before it's built — surface assumptions, steelman the alternative, ground the challenge in external evidence                       |
-| `persona-surveyor`   | breadth research — what prevails across many products, patterns, or users; three named instances per claimed pattern                                                |
-
-> `persona-skeptic` is **retired** — its refute-by-default stance is now the spine of `adversarial-review`. The folder remains as a redirect.
+| `market-research`    | market, customer, competitor, or UX-pattern research — type claims, triangulate evidence, grade confidence, and preserve uncertainty                                |
 
 ### Disciplines
 
@@ -77,7 +73,7 @@ Framework-free practices that raise the floor on any task, in any repo.
 
 | Skill                | Use it when                                                                                                                                                         |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `adversarial-review` | reviewing a branch / PR / diff / audit / bug — refute by default, run the checks yourself, the multi-lens panel; you produce findings, not the merge decision (absorbs the former `persona-skeptic`) |
+| `adversarial-review` | reviewing a branch / PR / diff / audit / bug — refute by default, run the checks yourself, the multi-lens panel; you produce findings, not the merge decision |
 | `empirical-proof`    | any completion claim — bind it to verbatim pasted output, or it reads unverified                                                                                    |
 | `concise-output`     | you want terse, scannable, token-economical output — evidence-first, structure over prose, no filler (clarity still outranks brevity)                               |
 | `fix-flaky-test`     | a test that fails intermittently — reproduce by looping, fix the cause not the assertion, don't retry-loop                                                          |

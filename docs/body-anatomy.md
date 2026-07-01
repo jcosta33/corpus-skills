@@ -36,7 +36,7 @@ Each branch maps to one design rule. The rest of this document walks each rule i
 | [\[2\]](./sources.md#2) Anthropic best practices                                   | 500-line hard cap on `SKILL.md` bodies.                                                                                                                                                                                                                                                                                    |
 | [\[8\]](./sources.md#8) Ibryam, "Skill Authoring Patterns"                         | Practical target ~200 lines; observation that beyond 200, instructions toward the bottom are read but not consistently acted on.                                                                                                                                                                                           |
 
-**Applied in this repo:** every shipped skill body sits well under the 500-line hard cap, and all but one hold to the ~200-line practical target — the catalogue clusters short. The single body over 200 is [`adversarial-review`](../skills/adversarial-review/SKILL.md) (just over 200 lines), which absorbed the retired `persona-skeptic` stance and carries both the refute-by-default posture and the review procedure. The repo enforces the cap in [`AGENTS.md`](../AGENTS.md) (the body-length rule).
+**Applied in this repo:** every shipped skill body sits well under the 500-line hard cap, and all but one hold to the ~200-line practical target — the catalogue clusters short. The single body over 200 is [`adversarial-review`](../skills/adversarial-review/SKILL.md) (just over 200 lines), which carries both the refute-by-default posture and the review procedure. The repo enforces the cap in [`AGENTS.md`](../AGENTS.md) (the body-length rule).
 
 > The 500-line cap is non-negotiable; the 200-line target is a forcing function. If a skill grows past 200, the next question is "what should move to `references/`?", not "should I raise the limit?".
 
@@ -49,7 +49,7 @@ Each branch maps to one design rule. The rest of this document walks each rule i
 | [\[2\]](./sources.md#2)                               | Bare ALL-CAPS MUST/NEVER imperatives are flagged as a yellow signal in Anthropic's `skill-creator`; pairing each rule with a one-line rationale gives the model a rubric for unanticipated cases. |
 | [\[8\]](./sources.md#8) Pattern 6 ("Explain-the-Why") | The rationale is what lets a model extend the rule to a case the author didn't anticipate.                                                                                                        |
 
-**Applied in this repo:** every body pairs each rule with one or two sentences of justification — numbered `### N. <Rule>` headings or a numbered list under `## Rules` for the work guides, hard-constraint bullets for the personas. Examples worth opening:
+**Applied in this repo:** every body pairs each rule with one or two sentences of justification — numbered `### N. <Rule>` headings, numbered lists under `## Rules`, or hard-constraint bullets where that shape is clearer. Examples worth opening:
 
 - [`empirical-proof`](../skills/empirical-proof/SKILL.md) — rules 2–6 each pair the directive with the failure mode it prevents.
 - [`write-research`](https://github.com/jcosta33/suspec-starter-kit/blob/main/.agents/skills/write-research/SKILL.md) (starter kit) — the rules alternate the directive with its evidentiary rationale.
@@ -89,7 +89,7 @@ Each branch maps to one design rule. The rest of this document walks each rule i
 
 A `references/task-template.md` is a structural commitment with its own diminishing-returns curve, its own cost model (the produced task file accrues across sessions), and its own decision rubric. The full empirical case — Anthropic's canonical three-file pattern [\[20\]](./sources.md#20), the InfiAgent 21x ablation [\[29\]](./sources.md#29), the 6-criterion rubric, the deliberate exemption pattern applied in this repo — lives in [Task files](./task-files.md).
 
-> **The short version:** ship a `task-template.md` only when working state is genuinely separate from the deliverable. If the deliverable _is_ the working state, or the skill is a mindset persona or cross-cutting quality gate whose discipline lives entirely in `SKILL.md`, ship none.
+> **The short version:** ship a `task-template.md` only when working state is genuinely separate from the deliverable. If the deliverable _is_ the working state, or the skill is a cross-cutting method or quality gate whose discipline lives entirely in `SKILL.md`, ship none.
 
 ---
 
@@ -110,7 +110,7 @@ flowchart LR
 - The body is sized for the U-curve: short enough that nothing important sits in the middle's attention trough.
 - `references/` files are kept one hop away so the on-demand load is reliable.
 
-The persona discipline is the canonical example: each `persona-<name>/SKILL.md` is its own self-contained file (~115–135 lines, well under the 200-line target). Only the persona that the agent actually adopts loads — total context cost is _lower_ than a single monolithic personas index would have been.
+The cross-cutting methods are the canonical example: each method skill is its own self-contained file, well under the 200-line target. Only the method the task actually calls for loads — total context cost is _lower_ than a single monolithic index would have been.
 
 ---
 

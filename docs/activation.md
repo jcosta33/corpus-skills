@@ -55,7 +55,7 @@ The same shape applies to descriptions. A description that names three concrete 
 | 600–800 chars   | Workable but past the sweet spot — every clause must justify itself; trim before adding        |
 | Above 800 chars | Compliance ceiling [\[32\]](./sources.md#32); the description starts working against itself    |
 
-The 800-char line is this repo's forcing target, not the spec limit (1024 [\[1\]](./sources.md#1)). All but one shipped description sit under it; the single exception is [`adversarial-review`](../skills/adversarial-review/SKILL.md) at 981 chars — spec-legal, but past the target because it carries both the refute-by-default posture and the absorbed `persona-skeptic` triggers. It is the explicit exception, not a silent one.
+The 800-char line is this repo's forcing target, not the spec limit (1024 [\[1\]](./sources.md#1)). All but one shipped description sit under it; the single exception is [`adversarial-review`](../skills/adversarial-review/SKILL.md) at 981 chars — spec-legal, but past the target because it carries both the refute-by-default posture and the multi-lens review procedure. It is the explicit exception, not a silent one.
 
 ---
 

@@ -90,6 +90,18 @@
 <a id="50"></a>
 **[50] Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of LLMs.** Tam, Wu, Tsai, Lin, Lee, Chen. **EMNLP 2024 (Industry)**, arXiv:2408.02442. Format restriction **during reasoning degrades** it (JSON-mode worst on GSM8K); the same structure helps classification/extraction; parse-error rates ~0 %, so the loss is reasoning-order compression, not malformed output. <https://arxiv.org/abs/2408.02442>. Grounds: reason free-form, then emit the structured artifact — never constrain the reasoning to the output shape.
 
+<a id="66"></a>
+**[66] Using LLMs for Market Research.** Brand, Israeli, Ngwe, Harvard Business School Marketing Unit Working Paper No. 23-062, posted Mar 2023; revised Oct 2025. Shows plausible willingness-to-pay estimates from GPT responses in comparable contexts, but also that fine-tuning did **not** improve alignment for new product categories or customer-segment differences. <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4395751>. Grounds: synthetic respondents can explore hypotheses, not replace real segment-matched evidence.
+
+<a id="67"></a>
+**[67] Revolutionizing Marketing Research with a Large Language Model: A Hybrid AI-Human Approach.** Arora, Chakraborty, Nishimura, SSRN, Jan 2024. Replicates qualitative and quantitative studies with GPT-4 against a Fortune 500 food-company context; synthetic respondents helped qualitative generation and basic analysis, while quantitative quality improved with few-shot/RAG context. <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4683054>. Grounds: LLMs are collaborators in a research workflow, not standalone market evidence.
+
+<a id="68"></a>
+**[68] Large Language Models for Market Research: A Data-Augmentation Approach.** Wang, Zhang, Zhang, _Marketing Science_, published online Mar 2026. Real-data + LLM-data augmentation in conjoint analysis produced robust estimators and 24.9%–79.8% data/cost savings; naive substitution exacerbated bias and failed to save data. <https://doi.org/10.1287/mksc.2025.0009>. Grounds: use synthetic data as calibrated augmentation, not direct substitution.
+
+<a id="69"></a>
+**[69] Using large language models to generate silicon samples in consumer and marketing research: Challenges, opportunities, and guidelines.** Sarstedt, Adler, Rau, Schmitt, _Psychology & Marketing_ 41(6), 2024. Reviews evidence comparing silicon and human samples; results vary by domain, with stronger use cases in upstream pretesting/pilots and heavier caveats for main studies. <https://doi.org/10.1002/mar.21982>. Grounds: downgrade confidence when market evidence is synthetic, domain-mismatched, or uncalibrated.
+
 ---
 
 ## Specifications and official guidance
@@ -123,6 +135,12 @@
 
 <a id="23"></a>
 **[23] Todo Lists / Tasks system.** Anthropic, Claude Code v2.1.16, Jan 2026. Disk-persistent task tracking for multi-session work, with dependency declaration and cross-session collaboration. Validates the externalised-task-file pattern at vendor scale. <https://docs.anthropic.com/en/docs/claude-code/changelog>
+
+<a id="64"></a>
+**[64] ICC/ESOMAR International Code on Market, Opinion and Social Research and Data Analytics.** ICC/ESOMAR, 2025 edition. The professional code for market/opinion/social research and data analytics; emphasizes legality, honesty, transparency, privacy, accountability, fit-for-purpose methods, method/source/limitation disclosure, and human oversight for AI/synthetic data. <https://iccwbo.org/news-publications/business-solutions/iccesomar-international-code-market-opinion-social-research-data-analytics/>
+
+<a id="65"></a>
+**[65] AAPOR Disclosure Standards.** American Association for Public Opinion Research. Requires disclosure of sponsor, population, sample source, mode, dates, sample size, weighting, processing/quality checks, precision limits, limitations, and response/disposition details for survey/public-opinion evidence. <https://aapor.org/standards-and-ethics/disclosure-standards/>. Grounds: survey claims need method disclosure before they can carry decision weight.
 
 ---
 

@@ -202,10 +202,6 @@ above.)
   leans on (re-run yourself; paste the tail; one verification per claim).
 - [`concise-output`](../concise-output/SKILL.md) — the output-economy dial for the report you write.
 
-(The former `persona-skeptic` stance is now folded into this skill — its spine is the refute-by-default
-Purpose, the Refuses table, and the self-review subsection above. The `persona-skeptic` entry is a
-redirect to here.)
-
 ## What does not belong
 
 - Style preference as a finding (unless it violates a project convention); soft-language findings;

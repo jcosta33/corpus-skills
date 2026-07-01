@@ -4,7 +4,7 @@ This repo is the optional-skills catalog for the Suspec framework: self-containe
 agent guides in the Agent Skills format, one folder per skill under `skills/`,
 with the evidence behind their design under `docs/`. It is a derived-content
 repo — it carries no Suspec workspace install; the work of changing it is
-planned and reviewed in the family workspace (the sibling `suspec-works` repo).
+planned and reviewed in the private family workspace.
 
 ## Editing rules
 
